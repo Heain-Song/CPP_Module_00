@@ -1,0 +1,11 @@
+2024-03-07
+ex00
+- megaphone.cpp (done)
+- Makefile (WIP)
+
+2024-03-08
+ex00
+- Makefile (done)
+- Add new line for every output (done)
+- Check memory leaks (done)
+- Test as much as possible
