@@ -1,11 +1,59 @@
-2024-03-07
+[2024-03-07]
 ex00
 - megaphone.cpp (done)
 - Makefile (WIP)
 
-2024-03-08
+[2024-03-08]
 ex00
 - Makefile (done)
 - Add new line for every output (done)
 - Check memory leaks (done)
 - Test as much as possible
+
+ex01
+- read subjects (done)
+	* make phonebook using array of contacts.
+	* 8 contacts max. If 9th input comes, replace it with the oldest.
+	* your phonebook must be "instantiated" as an instance of the Phonebook classs.
+	* instantiate: to represent or be an example of something.
+	* Design the classes as you like, but keep in mind that anything that will always be used inside a class is private,
+	and that anything that can be used outside a class is public.
+	* On program start-up, the phonebook is empty and the user is prompted to enter one of three commands.
+	* The program only accepts ADD, SEARCH and EXIT.
+	* Any other input is discarded.
+
+- Write int main()
+	* receive just 1 input and save it. (done)
+
+- Create 2 classes (PhoneBook, Contact) (WIP)
+
+[2024-03-11]
+- Write the rough architecture of the program (done)
+- Divide into smaller tasks.
+	1. Create Contact class
+	2. Create PhoneBook class
+	3. Instantiate PhoneBook class
+	4. Instantiate Contact class
+	5. Prompt to enter commands - ADD, SEARCH, EXIT
+	6. ADD
+		- check empty fields
+		- check if contacts are full (max 8)
+		- waits for another input for ADD
+	7. SEARCH
+		- check if the input index is inside of the range. (If not, define the behavior)
+		- check if it's longer than 10 characters before display to decide if replacing by a dot(.) is required
+		- right alignment
+		- divide columns with pipe
+		- one filed per line
+		- prompt for the index of the entry to display for SEARCH
+	8. EXIT
+		- delete contact data, lost forever
+		- program quit
+	9. Discard otherwise
+		- any other input is discarded!
+
+
+
+[Reference]
+https://www.geeksforgeeks.org/different-ways-to-instantiate-an-object-in-c-with-examples/
+
