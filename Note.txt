@@ -49,11 +49,38 @@ ex01
 	8. EXIT
 		- delete contact data, lost forever
 		- program quit
-	9. Discard otherwise
+	9. Discard otherwises
 		- any other input is discarded!
 
+[2024-03-12]
+
+<To-do>
+- Create Contact class
+- Crate PhoneBook class
+	-> How to put an array of contacts in PhoneBook class.....
+- Instantiate PhoneBook class
+- Instantiate Contact class
+
+
+[Check List before submission]
+- c++ -Wall -Wextra -Werror -std=c++98
+- directory names ex00, ex01, ..
+- Write class names in UpperCamelCase
+- Files containing class code should be named according to the class name (e.g. ClassName.hpp/ClassName.h, ClassName.tpp)
+- Every output must be ended by a new line
+- NO printf(), alloc(), free()
+- NO using namespace <ns_name>
+- check memory leaks
+- NO function implementation in a header file
+- You should be able to use each of your headers independently from others. Thus,
+they must include all the dependencies they need. However, you must avoid the
+problem of double inclusion by adding include guards. Otherwise, your grade will
+be 0.
+- double-check with the given examples in the subject
+- NO Dynamic allocation allowed in PhoneBook classes
 
 
 [Reference]
 https://www.geeksforgeeks.org/different-ways-to-instantiate-an-object-in-c-with-examples/
-
+https://www.geeksforgeeks.org/maximum-value-of-unsigned-long-long-int-in-c/
+https://www.geeksforgeeks.org/array-of-objects-in-c-with-examples/
