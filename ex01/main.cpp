@@ -27,6 +27,7 @@ class PhoneBook
 	*/
 	public:
 	Contact contacts[8];
+	int		index;
 };
 
 int main(int argc, char **argv)
@@ -72,7 +73,9 @@ int main(int argc, char **argv)
 					i = 0;
 				if (i < 8)
 				{
-					std::cout << "First name : "; // when input is empty/space, it falls into infinite loops..
+					phonebook.index = i;
+					std::cout << "First name : ";
+					//std::cin >> phonebook.contacts[phonebook.index].first_name;
 					getline(std::cin, phonebook.contacts[i].first_name);
 	
 					std::cout << "Last name : ";
@@ -129,7 +132,7 @@ int main(int argc, char **argv)
 				i = 0;
 				while (i < 8)
 				{
-					std::cout << std::right << std::setw(10) << i << " | ";
+					std::cout << std::right << std::setw(10) << phonebook.index << " | ";
 					std::cout << std::right << std::setw(10) << phonebook.contacts[i].first_name << " | ";
 					std::cout << std::right << std::setw(10) << phonebook.contacts[i].last_name << " | ";
 					std::cout << std::right << std::setw(10) << phonebook.contacts[i].nickname << " | ";

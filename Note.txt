@@ -79,6 +79,16 @@ be 0.
 - double-check with the given examples in the subject
 - NO Dynamic allocation allowed in PhoneBook classes
 
+[2025-03-15]
+Problems
+- getline() takes empty fields when saving contacts
+
+
+
+
+
+
+
 
 [Reference]
 https://www.geeksforgeeks.org/different-ways-to-instantiate-an-object-in-c-with-examples/
