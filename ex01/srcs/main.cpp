@@ -7,7 +7,6 @@ int main(int argc, char **argv)
 	{
 		std::string cmd;
 		PhoneBook phonebook;
-		phonebook.index = 0;
 
 		while (1)
 		{
@@ -17,12 +16,9 @@ int main(int argc, char **argv)
 			if (!getline(std::cin, cmd))
 				return 1;
 			if (cmd == "ADD")
-			{
-				phonebook.add(phonebook);
-				phonebook.index++;
-			}
+				phonebook.add();
 			else if (cmd == "SEARCH")
-				phonebook.search(phonebook);
+				phonebook.search();
 			else if (cmd == "EXIT")
 				return 0;
 		}

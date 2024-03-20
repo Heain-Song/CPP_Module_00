@@ -8,10 +8,19 @@
 
 class PhoneBook
 {
-	public:
+	private:
 	Contact contacts[8];
 	int		index;
-	bool		add(PhoneBook &phonebook);
-	bool		search(PhoneBook &phonebook);
+
+	public:
+	PhoneBook()
+	{
+		this->index = 0;
+	}
+
+	int			getIndex();
+	void		increaseIndex();
+	void		add();
+	void		search();
 	std::string truncate(std::string str);
 };
