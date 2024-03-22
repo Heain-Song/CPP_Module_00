@@ -27,7 +27,7 @@ void		PhoneBook::search()
 	std::cout << "To see details, enter the index between 0 and 7 : ";
 	if (!getline(std::cin, input))
 		return ;
-	if (isdigit(input[0]))
+	if (isdigit(input[0]) && input.length() == 1)
 	{
 		i = std::atoi(input.c_str());
 		if (0 <= i && i <= 7)
@@ -38,9 +38,14 @@ void		PhoneBook::search()
 			std::cout << "Phone number : " << this->contacts[i].getPhoneNumber() << std::endl;
 			std::cout << "Darkest secret : " << this->contacts[i].getDarkestSecret() << std::endl;
 		}
+		else
+			std::cout << "Wrong Index. Index must be between 0 and 7. Try SEARCH again." << std::endl;
 	}
 	else
+	{
+		std::cout << "Wrong Index. Index must be between 0 and 7. Try SEARCH again." << std::endl;
 		return ;
+	}
 }
 
 void		PhoneBook::add()
