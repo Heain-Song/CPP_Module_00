@@ -13,13 +13,12 @@ class PhoneBook
 	int		index;
 
 	public:
-	PhoneBook() //constructor
+	PhoneBook()
 	{
 		this->index = 0;
 	}
-
+	void		setIndex();
 	int			getIndex();
-	void		increaseIndex();
 	void		add();
 	void		search();
 	std::string truncate(std::string str);
