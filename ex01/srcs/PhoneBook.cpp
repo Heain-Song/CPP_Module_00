@@ -22,35 +22,16 @@ void		PhoneBook::search()
 		std::cout << std::endl;
 		i++;
 	}
-	// do {
-	// 	if (std::cin.fail())
-	// 		return ;
-	// 	std::cout << "Enter the index between 0 and 7 : ";
-	// 	if (!getline(std::cin, user_input_index))
-	// 		return ;
-	// 	if (!(('0' <= user_input_index[0] && user_input_index[0] <= '7') && (user_input_index.size() ==1)))
-	// 		return ;
-	// 	if (isdigit(user_input_index[0]))
-	// 		i = std::atoi(user_input_index.c_str());
-	// 	else
-	// 		i = -1;
-
-	// } while (i < 0 || i > (this->index - 1));
-
-	// display summary
-	// index input
-	// index input valid -> show details
-	// index input invalid -> terminate SEARCH
 	if (std::cin.fail())
 		return ;
 	std::cout << "To see details, enter the index between 0 and 7 : ";
 	if (!getline(std::cin, user_input_index))
 		return ;
-	// if (!(('0' <= user_input_index[0] && user_input_index[0] <= '7') && (user_input_index.size() ==1)))
-	// 		return ;
 	if (isdigit(user_input_index[0]))
 		i = std::atoi(user_input_index.c_str());
-	if ((0 <= i && i <= 7) && (this->contacts[i].getFirstName().length() != 0))
+	else
+		return ;
+	if (0 <= i && i <= 7)
 	{
 		std::cout << "First name : " << this->contacts[i].getFirstName() << std::endl;
 		std::cout << "Last name : " << this->contacts[i].getLastName() << std::endl;
