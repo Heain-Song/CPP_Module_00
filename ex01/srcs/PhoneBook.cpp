@@ -13,7 +13,7 @@ void		PhoneBook::search()
 	std::cout << std::endl;
 
 	i = 0;
-	while (i < 8)
+	while (i < this->index)
 	{
 		std::cout << std::right << std::setw(10) << i << " | ";
 		std::cout << std::right << std::setw(10) << this->truncate(this->contacts[i].getFirstName()) << " | ";
@@ -22,31 +22,44 @@ void		PhoneBook::search()
 		std::cout << std::endl;
 		i++;
 	}
-	do {
-		if (std::cin.fail())
-			return ;
-		std::cout << "Enter the index between 0 and 7 : ";
-		if (!getline(std::cin, user_input_index))
-			return ;
-		if (!(('0' <= user_input_index[0] && user_input_index[0] <= '7') && (user_input_index.size() ==1)))
-			return ;
-		if (isdigit(user_input_index[0]))
-			i = std::atoi(user_input_index.c_str());
-		else
-			i = -1;
+	// do {
+	// 	if (std::cin.fail())
+	// 		return ;
+	// 	std::cout << "Enter the index between 0 and 7 : ";
+	// 	if (!getline(std::cin, user_input_index))
+	// 		return ;
+	// 	if (!(('0' <= user_input_index[0] && user_input_index[0] <= '7') && (user_input_index.size() ==1)))
+	// 		return ;
+	// 	if (isdigit(user_input_index[0]))
+	// 		i = std::atoi(user_input_index.c_str());
+	// 	else
+	// 		i = -1;
 
-	} while (i < 0 || i > (this->index - 1));
+	// } while (i < 0 || i > (this->index - 1));
 
 	// display summary
 	// index input
 	// index input valid -> show details
 	// index input invalid -> terminate SEARCH
-
-	std::cout << "First name : " << this->contacts[i].getFirstName() << std::endl;
-	std::cout << "Last name : " << this->contacts[i].getLastName() << std::endl;
-	std::cout << "Nickname : " << this->contacts[i].getNickname() << std::endl;
-	std::cout << "Phone number : " << this->contacts[i].getPhoneNumber() << std::endl;
-	std::cout << "Darkest secret : " << this->contacts[i].getDarkestSecret() << std::endl;
+	if (std::cin.fail())
+		return ;
+	std::cout << "To see details, enter the index between 0 and 7 : ";
+	if (!getline(std::cin, user_input_index))
+		return ;
+	// if (!(('0' <= user_input_index[0] && user_input_index[0] <= '7') && (user_input_index.size() ==1)))
+	// 		return ;
+	if (isdigit(user_input_index[0]))
+		i = std::atoi(user_input_index.c_str());
+	if ((0 <= i && i <= 7) && (this->contacts[i].getFirstName().length() != 0))
+	{
+		std::cout << "First name : " << this->contacts[i].getFirstName() << std::endl;
+		std::cout << "Last name : " << this->contacts[i].getLastName() << std::endl;
+		std::cout << "Nickname : " << this->contacts[i].getNickname() << std::endl;
+		std::cout << "Phone number : " << this->contacts[i].getPhoneNumber() << std::endl;
+		std::cout << "Darkest secret : " << this->contacts[i].getDarkestSecret() << std::endl;
+	}
+	else
+		return ;
 }
 
 void		PhoneBook::add()
@@ -81,14 +94,14 @@ void		PhoneBook::add()
 		return ;
 	this->contacts[this->index % 8].setDarkestSecret(tmp_string);
 
-	if (this->index % 8 == 1)
-	{
-	std::cout << this->contacts[this->index % 8].getFirstName() << std::endl;
-	std::cout << this->contacts[this->index % 8].getLastName() << std::endl;
-	std::cout << this->contacts[this->index % 8].getNickname() << std::endl;
-	std::cout << this->contacts[this->index % 8].getPhoneNumber() << std::endl;
-	std::cout << this->contacts[this->index % 8].getDarkestSecret() << std::endl;
-	}
+	// if (this->index % 8 == 1)
+	// {
+	// std::cout << this->contacts[this->index % 8].getFirstName() << std::endl;
+	// std::cout << this->contacts[this->index % 8].getLastName() << std::endl;
+	// std::cout << this->contacts[this->index % 8].getNickname() << std::endl;
+	// std::cout << this->contacts[this->index % 8].getPhoneNumber() << std::endl;
+	// std::cout << this->contacts[this->index % 8].getDarkestSecret() << std::endl;
+	// }
 	this->increaseIndex();
 	// this->index++;
 	// do{

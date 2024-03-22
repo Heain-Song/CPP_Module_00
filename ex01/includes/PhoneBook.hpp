@@ -13,7 +13,7 @@ class PhoneBook
 	int		index;
 
 	public:
-	PhoneBook()
+	PhoneBook() //constructor
 	{
 		this->index = 0;
 	}
